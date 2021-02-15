@@ -6,17 +6,17 @@
 
 * Create a constructor function that creates an object associated with each product, and has the following properties:
 
-  1. Name of the product
-  1. File path of image
-  1. Times the image has been shown
+  - Name of the product
+  - File path of image
+  - Times the image has been shown
 
-  - Create an algorithm that will randomly generate three unique product images from the images directory and display them side-by-side-by-side in the browser window.
+  * Create an algorithm that will randomly generate three unique product images from the images directory and display them side-by-side-by-side in the browser window.
 
-  - For each of the three images, increment its property of times it has been shown by one.
+  * For each of the three images, increment its property of times it has been shown by one.
 
-  - Attach an event listener to the section of the HTML page where the images are going to be displayed.
+  * Attach an event listener to the section of the HTML page where the images are going to be displayed.
 
-  - Once the users 'clicks' a product, generate three new products for the user to pick from.
+  * Once the users 'clicks' a product, generate three new products for the user to pick from.
 
 6. Track the selections made by viewers so that I can determine which products to keep for the catalog.
 
