@@ -8,14 +8,15 @@
 1. Name of the product
 1. File path of image
 1. Times the image has been shown
-1. Create an algorithm that will randomly generate three unique product images from the images directory and display them side-by-side-by-side in the browser window.
 
-For each of the three images, increment its property of times it has been shown by one.
+* Create an algorithm that will randomly generate three unique product images from the images directory and display them side-by-side-by-side in the browser window.
 
-Attach an event listener to the section of the HTML page where the images are going to be displayed.
+* For each of the three images, increment its property of times it has been shown by one.
 
-Once the users ‘clicks’ a product, generate three new products for the user to pick from.
-As a user, I would like to track the selections made by viewers so that I can determine which products to keep for the catalog.
+* Attach an event listener to the section of the HTML page where the images are going to be displayed.
+
+* Once the users ‘clicks’ a product, generate three new products for the user to pick from.
+2. track the selections made by viewers so that I can determine which products to keep for the catalog.
 In the constructor function define a property to hold the number of times a product has been clicked.
 
 After every selection by the viewer, update the newly added property to reflect if it was clicked.
