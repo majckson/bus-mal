@@ -18,18 +18,18 @@
 
 * Once the users 'clicks' a product, generate three new products for the user to pick from.
 
-6. Track the selections made by viewers so that I can determine which products to keep for the catalog.
+2. Track the selections made by viewers so that I can determine which products to keep for the catalog.
 
   - In the constructor function define a property to hold the number of times a product has been clicked.
 
   - After every selection by the viewer, update the newly added property to reflect if it was clicked.
 
-7. Control the number of rounds a user is presented with so that I can control the voting session duration.
+3. Control the number of rounds a user is presented with so that I can control the voting session duration.
 
   - By default, the user should be presented with 25 rounds of voting before ending the session.
   - Keep the number of rounds in a variable to allow the number to be easily changed for debugging and testing purposes.
 
-8. View a report of results after all rounds of voting have concluded so that I can evaluate which products were the most popular.
+4. View a report of results after all rounds of voting have concluded so that I can evaluate which products were the most popular.
 
   - Create a property attached to the constructor function itself that keeps track of all the products that are currently being considered.
 
