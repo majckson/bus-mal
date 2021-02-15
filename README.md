@@ -45,7 +45,7 @@
 
 s
 
-- [submission PR](majckson.github.io/bus-mall/)
+- [submission PR](https://majckson.github.io/bus-mall//)
 - class11/lab/asset
 
 ### Reflections and Comments
