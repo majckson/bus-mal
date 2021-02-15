@@ -4,11 +4,11 @@
 
 1. Display three unique products by chance so that the viewers can pick a favorite.
 
-2. Create a constructor function that creates an object associated with each product, and has the following properties:
+* Create a constructor function that creates an object associated with each product, and has the following properties:
 
-3. Name of the product
-4. File path of image
-5. Times the image has been shown
+  1. Name of the product
+  1. File path of image
+  1. Times the image has been shown
 
   - Create an algorithm that will randomly generate three unique product images from the images directory and display them side-by-side-by-side in the browser window.
 
