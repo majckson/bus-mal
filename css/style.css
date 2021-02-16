@@ -1,0 +1,40 @@
+body {
+  background-color: bisque;
+}
+
+h1 {
+  font-size: 2em;
+  text-align: center;
+}
+
+h3 {
+  font-size: 1em;
+  text-align: center;
+}
+
+section {
+  background-color: gray;
+  width: 300px; 
+  height: 300px;
+  margin: 50px;
+}
+
+img:hover {
+  cursor: pointer;
+}
+
+div {
+  padding: 5px;
+  width: max-content;
+  height: 30 px;
+  background-color: gray;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  border-radius: 50px;
+}
+
+div:hover {
+  cursor: pointer;
+}
