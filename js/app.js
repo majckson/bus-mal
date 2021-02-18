@@ -9,7 +9,7 @@ let allProducts = [];
 let ProductsToDisplay = [];
 
 let myContainer = document.querySelector('section');
-let myButton = document.querySelector('div')
+// let myButton = document.querySelector('div')
 let imageOne = document.querySelector('section img:first-child');
 let imageTwo = document.querySelector('section img:nth-child(2)');
 let imageThree = document.querySelector('section img:nth-child(3)');
@@ -78,14 +78,14 @@ function renderProducts() {
   allProducts[ProductsThreeIndex].views++;
 }
 
-function renderResults() {
-  let myList = document.querySelector('ul');
-  for (let i = 0; i < allProducts.length; i++) {
-    let li = document.createElement('li');
-    li.textContent = `${allProducts[i].name} had ${allProducts[i].clicks} votes, and was  seen ${allProducts[i].views} times.`;
-    myList.appendChild(li);
-  }
-}
+// function renderResults() {
+//   let myList = document.querySelector('ul');
+//   for (let i = 0; i < allProducts.length; i++) {
+//     let li = document.createElement('li');
+//     li.textContent = `${allProducts[i].name} had ${allProducts[i].clicks} votes, and was  seen ${allProducts[i].views} times.`;
+//     myList.appendChild(li);
+//   }
+// }
 
 function handleClick(event) {
   if (event.target === myContainer) {
@@ -101,16 +101,56 @@ function handleClick(event) {
   }
   renderProducts();
   if (totalClicks === clicksAllowed) {
-    myContainer.removeEventListener('click' , handleClick);
+    myContainer.removeEventListener('click', handleClick);
   }
 }
 
-function handleButtonClick(event) {
-  if (totalClicks === clicksAllowed)
-    renderResults();
-}
+// function handleButtonClick(event) {
+//   if (totalClicks === clicksAllowed)
+//     renderResults();
+// }
 
 renderProducts();
 
+
+var ctx = document.getElementById('myChart').getContext('2d');
+var myChart = new Chart(ctx, {
+  type: 'bar',
+  data: {
+    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+    datasets: [{
+      label: '# of Votes',
+      data: [12, 19, 3, 5, 2, 3],
+      backgroundColor: [
+        'rgba(255, 99, 132, 0.2)',
+        'rgba(54, 162, 235, 0.2)',
+        'rgba(255, 206, 86, 0.2)',
+        'rgba(75, 192, 192, 0.2)',
+        'rgba(153, 102, 255, 0.2)',
+        'rgba(255, 159, 64, 0.2)'
+      ],
+      borderColor: [
+        'rgba(255, 99, 132, 1)',
+        'rgba(54, 162, 235, 1)',
+        'rgba(255, 206, 86, 1)',
+        'rgba(75, 192, 192, 1)',
+        'rgba(153, 102, 255, 1)',
+        'rgba(255, 159, 64, 1)'
+      ],
+      borderWidth: 1
+    }]
+  },
+  options: {
+    scales: {
+      yAxes: [{
+        ticks: {
+          beginAtZero: true
+        }
+      }]
+    }
+  }
+});
+
+
 myContainer.addEventListener('click', handleClick);
-myButton.addEventListener('click', handleButtonClick);
+// myButton.addEventListener('click', handleButtonClick);
