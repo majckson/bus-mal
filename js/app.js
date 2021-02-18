@@ -51,7 +51,7 @@ function getRandomIndex() {
 function renderProducts() {
 
 
-  while (ProductsToDisplay.length < 3) {
+  while (ProductsToDisplay.length < 6) {
     let indexArray = getRandomIndex(allProducts.length);
     while (ProductsToDisplay.includes(indexArray)) {
       indexArray = getRandomIndex(allProducts.length);
