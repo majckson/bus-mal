@@ -25,28 +25,34 @@ function Products(name, fileExt = 'jpg') {
   allProducts.push(this);
 }
 
+let retrieveProducts = localStorage.getItem('products');
 
-new Products('sweep', 'png');
-new Products('bag');
-new Products('banana');
-new Products('bathroom');
-new Products('boots');
-new Products('breakfast');
-new Products('bubblegum');
-new Products('chair');
-new Products('cthulhu');
-new Products('dog-duck');
-new Products('dragon');
-new Products('pen');
-new Products('pet-sweep');
-new Products('scissors');
-new Products('shark');
-new Products('tauntaun');
-new Products('unicorn');
-new Products('usb', 'gif');
-new Products('water-can');
-new Products('wine-glass');
+if (retrieveProducts) {
+  let parsedProducts = JSON.parse(retrieveProducts);
+  allProducts = parsedProducts;
+} else {
 
+  new Products('sweep', 'png');
+  new Products('bag');
+  new Products('banana');
+  new Products('bathroom');
+  new Products('boots');
+  new Products('breakfast');
+  new Products('bubblegum');
+  new Products('chair');
+  new Products('cthulhu');
+  new Products('dog-duck');
+  new Products('dragon');
+  new Products('pen');
+  new Products('pet-sweep');
+  new Products('scissors');
+  new Products('shark');
+  new Products('tauntaun');
+  new Products('unicorn');
+  new Products('usb', 'gif');
+  new Products('water-can');
+  new Products('wine-glass');
+}
 
 function getRandomIndex() {
   return Math.floor(Math.random() * allProducts.length);
@@ -107,12 +113,16 @@ function handleClick(event) {
     createChart();
 
   }
-}
 
-// function handleButtonClick(event) {
-//   if (totalClicks === clicksAllowed)
-//     renderResults();
-// }
+
+  // function handleButtonClick(event) {
+  //   if (totalClicks === clicksAllowed)
+  //     renderResults();
+  // }
+
+  let stringifiedProducts = JSON.stringify(allProducts);
+  localStorage.setItem('products', stringifiedProducts);
+}
 
 renderProducts();
 
