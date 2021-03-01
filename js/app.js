@@ -6,7 +6,7 @@ console.log('Hello World');
 let totalClicks = 0;
 let clicksAllowed = 25;
 let allProducts = [];
-let p = [];
+let productsToDisplay = [];
 
 let myContainer = document.querySelector('section');
 // let myButton = document.querySelector('div')
@@ -60,30 +60,30 @@ function getRandomIndex() {
 
 function renderProducts() {
 
-  while (p.length < 6) {
+  while (productsToDisplay.length < 6) {
     let indexArray = getRandomIndex(allProducts.length);
-    while (p.includes(indexArray)) {
+    while (productsToDisplay.includes(indexArray)) {
       indexArray = getRandomIndex(allProducts.length);
     }
-    p.push(indexArray);
+    productsToDisplay.push(indexArray);
   }
 
   let productsOneIndex = productsToDisplay.shift();
-  let productsTwoIndex = p.shift();
-  let productsThreeIndex = p.shift();
+  let productsTwoIndex = productsToDisplay.shift();
+  let productsThreeIndex = productsToDisplay.shift();
 
 
-  imageOne.src = allProducts[p].src;
-  imageOne.title = allProducts[p].name;
-  allProducts[p].views++;
+  imageOne.src = allProducts[productsOneIndex].src;
+  imageOne.title = allProducts[productsOneIndex].name;
+  allProducts[productsOneIndex].views++;
 
-  imageTwo.src = allProducts[p].src;
-  imageTwo.title = allProducts[p].name;
-  allProducts[p].views++;
+  imageTwo.src = allProducts[productsTwoIndex].src;
+  imageTwo.title = allProducts[productsTwoIndex].name;
+  allProducts[productsTwoIndex].views++;
 
-  imageThree.src = allProducts[p].src;
-  imageThree.title = allProducts[p].name;
-  allProducts[p].views++;
+  imageThree.src = allProducts[productsThreeIndex].src;
+  imageThree.title = allProducts[productsThreeIndex].name;
+  allProducts[productsThreeIndex].views++;
 }
 
 // function renderResults() {
@@ -121,7 +121,6 @@ function handleClick(event) {
   //   if (totalClicks === clicksAllowed)
   //     renderResults();
   // }
-Í
 }
 
 renderProducts();
