@@ -6,7 +6,7 @@ console.log('Hello World');
 let totalClicks = 0;
 let clicksAllowed = 25;
 let allProducts = [];
-let ProductsToDisplay = [];
+let p = [];
 
 let myContainer = document.querySelector('section');
 // let myButton = document.querySelector('div')
@@ -60,30 +60,30 @@ function getRandomIndex() {
 
 function renderProducts() {
 
-  while (ProductsToDisplay.length < 6) {
+  while (p.length < 6) {
     let indexArray = getRandomIndex(allProducts.length);
-    while (ProductsToDisplay.includes(indexArray)) {
+    while (p.includes(indexArray)) {
       indexArray = getRandomIndex(allProducts.length);
     }
-    ProductsToDisplay.push(indexArray);
+    p.push(indexArray);
   }
 
-  let ProductsOneIndex = ProductsToDisplay.shift();
-  let ProductsTwoIndex = ProductsToDisplay.shift();
-  let ProductsThreeIndex = ProductsToDisplay.shift();
+  let productsOneIndex = productsToDisplay.shift();
+  let productsTwoIndex = p.shift();
+  let productsThreeIndex = p.shift();
 
 
-  imageOne.src = allProducts[ProductsOneIndex].src;
-  imageOne.title = allProducts[ProductsOneIndex].name;
-  allProducts[ProductsOneIndex].views++;
+  imageOne.src = allProducts[p].src;
+  imageOne.title = allProducts[p].name;
+  allProducts[p].views++;
 
-  imageTwo.src = allProducts[ProductsTwoIndex].src;
-  imageTwo.title = allProducts[ProductsTwoIndex].name;
-  allProducts[ProductsTwoIndex].views++;
+  imageTwo.src = allProducts[p].src;
+  imageTwo.title = allProducts[p].name;
+  allProducts[p].views++;
 
-  imageThree.src = allProducts[ProductsThreeIndex].src;
-  imageThree.title = allProducts[ProductsThreeIndex].name;
-  allProducts[ProductsThreeIndex].views++;
+  imageThree.src = allProducts[p].src;
+  imageThree.title = allProducts[p].name;
+  allProducts[p].views++;
 }
 
 // function renderResults() {
@@ -100,10 +100,10 @@ function handleClick(event) {
     alert('Please click on an image');
   }
   totalClicks++;
-  let ProductsClicked = event.target.title;
+  let productsClicked = event.target.title;
 
   for (let i = 0; i < allProducts.length; i++) {
-    if (ProductsClicked === allProducts[i].name) {
+    if (productsClicked === allProducts[i].name) {
       allProducts[i].clicks++;
     }
   }
@@ -111,6 +111,8 @@ function handleClick(event) {
   if (totalClicks === clicksAllowed) {
     myContainer.removeEventListener('click', handleClick);
     createChart();
+    let stringifiedProducts = JSON.stringify(allProducts);
+    localStorage.setItem('products', stringifiedProducts);
 
   }
 
@@ -119,9 +121,7 @@ function handleClick(event) {
   //   if (totalClicks === clicksAllowed)
   //     renderResults();
   // }
-
-  let stringifiedProducts = JSON.stringify(allProducts);
-  localStorage.setItem('products', stringifiedProducts);
+Í
 }
 
 renderProducts();
